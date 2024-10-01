@@ -1,0 +1,186 @@
+/* Импортировала стиль текста */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Применение ко всему контенту */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Некоторые стили примененные к телу  */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    background: linear-gradient(-45deg, #bda98e, #ac9970, #6e633e, #bda98e);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+/* Анимация для заднего фона  */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Настройки для верхнего меню,заголовки дизайн, */
+/* Маленькая настройка для того что бы ссылки выглядели */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* формирование меню */
+.menu-main {
+    border-radius: 25px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: inline-flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    padding: 0 10px;
+    margin: 2px 0 0 0;
+
+}
+
+/* Стили для фона и оформление меню */
+.menu-main li {
+    list-style: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* анимация наведения  */
+.menu-main li::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: 0.2s;
+    border-radius: 25px;
+}
+
+.menu-main li:hover::before {
+    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+    box-shadow: 0px 3px 20px 0px black;
+    transform: scale(1.2);
+}
+
+/* стили для логотипа  */
+h1 {
+    text-shadow: 1px 1px 1px silver, -1px 1px 1px silver;
+    color: white;
+    transition: all .5s;
+    z-index: 0;
+    margin: 100px 0px 0% 0px;
+    font-size: 80px;
+}
+
+h1:hover {
+    text-shadow: -1px -1px 1px silver, 1px -1px 1px silver;
+    color: white;
+}
+
+/* Линии и настройки для центарльного текста  */
+.center {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 0 rgba(0, 0, 0, 0.5), 10px 0 0 rgba(0, 0, 0, 0.5);
+    color: #c2c2c0;
+    line-height: 34px;
+}
+
+/* Главная верхняя заставка */
+header {
+    height: 770px;
+    background: url(/images/scale_1200\ \(1\).png) no-repeat;
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    text-align: center;
+
+}
+
+/* Блок "убежища" */
+.safe-haven {
+    height: 350px;
+    text-align: right;
+    border: 1px solid black;
+}
+
+.Satellites {
+    border: 1px solid black;
+    height: 350px;
+    text-align:left;
+}
+
+/* что бы картинки были одного размера */
+ img {
+    float: right;
+    width: 440px;
+    height: 351px;
+} 
+
+/* Форма регистрации кнопка и инпуты */
+.form-registration {
+    max-width: 320px;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: #fff;
+    display: none;
+
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+
+    border: 0;
+    background-color: #1cbc11;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #14a20a;
+}
+
