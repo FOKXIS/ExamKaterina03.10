@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>NovaRus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/> 
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -12,37 +13,67 @@
     <header>
         <nav class="top-menu">
             <ul class="menu-main">
-                <li><a href="Work.html" class="current">Работа</a></li>
-                <li><a href="#safe-haven">Убежища</a></li>
-                <li><a href="#Satellites">Спутники</a></li>
-                <li><a id="FormRegestration" href="#form-registration">Сделка</a></li>
+                <li><a href="/Site1/index.html" class="current">Работа</a></li>
+                <li><a id="SafeHaven"onclick="toggleModal('openModalTwo')">Убежища</a></li>
+                <li><a class="Satellites" onclick="toggleModal('openModal')">Спутники</a></li>
+                <li><a id="FormRegestration" onclick="toggleModal('FormRegestrationModal')">Сделка</a></li>
             </ul>
         </nav>
         <!-- <div id="header_main"> -->
         <h1 class="logo">NovaRus</h1>
-        <h2 class="center">Твой безопастный мир</h2>
+        <h2 class="center">Твой безопасный мир</h2>
         <!-- </div> -->
     </header>
-    <footer>
-    </footer>
-                                                <!-- Модально окно регистрации -->
+    <!-- Модально окно регистрации -->
 
-<div  id="FormRegestrationModal" class="background-modal">
-    <div class="form-registration">
-        <button class="clouse-button" id="clouseButtonFormRegistrationModal">x</button>
-        <form   action="" method="post">
-            <input class="input" type="text" placeholder="Ваше имя">
-            <input class="input" type="email" placeholder="Ваш e-mail">
-            <input class="input" type="tel" placeholder="Ваш телефон">
-            <input class="input" type="password" placeholder="Пароль">
-            <input class="input" type="password" placeholder="Пароль еще раз">
-            <button class="btn" type="submit">Регистрация</button>
-        </form>
+    <div id="FormRegestrationModal" class="background-modal">
+        <div class="form-registration">
+            <a id="clouseButton" class="close-button" onclick="toggleModal('FormRegestrationModal')">×</a>
+           <div>
+            <form action method="post">
+                <img src="images/Okpd.gif" alt class="img-gif-modal" />
+                <input class="input" type="text" placeholder="Ваше имя">
+                <input class="input" type="texr" placeholder="Ваше звание">
+                <input class="input" type="text" placeholder="Ваш возраст">
+                <input class="input" type="text" placeholder="Кол-во людей в семье">
+                <input class="input" type="text" placeholder="Ваш серийный номер">
+                <button class="btn" type="submit">Подать заявку на
+                    сделку</button>
+            </form>
+            </div>
+        </div>
     </div>
-</div>
+    <!-- Модальное окно спутников -->
+    <div id="openModal" class="background-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Спутники</h3>
+                    <a id="clouseButton" class="close-button" onclick="toggleModal('openModal')">×</a>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Модальное окно убежишь  -->
+    <div id="openModalTwo" class="background-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Убежища</h3>
+                    <a id="clouseButton" class="close-button" onclick="toggleModal('openModalTwo')">×</a>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="./scripts/Scripts.js">
-    
-</script>
+<!-- подключеные скрипты -->
+<script src="./scripts/Scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
 
 </html>

@@ -20,7 +20,7 @@ body {
 /* Настройки для верхнего меню,заголовки дизайн, */
 /* Маленькая настройка для того что бы ссылки выглядели */
 a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ h1:hover {
 
 /* Главная верхняя заставка */
 header {
-    height: 770px;
+    height: 955px;
     background: url(/images/scale_1200\ \(1\).png) no-repeat;
     background-size: cover;
     color: rgb(0, 0, 0);
@@ -106,80 +106,180 @@ header {
 
 }
 
-/* Блок "убежища" */
-.safe-haven {
-    height: 350px;
-    text-align: right;
-    border: 1px solid black;
-}
 
-.Satellites {
-    border: 1px solid black;
-    height: 350px;
-    text-align:left;
-}
+
 
 /* что бы картинки были одного размера */
- img {
+.img-gif-modal {
+    position: relative;
+    border-radius: 60px;
+    top: 17px;
+    right: 52px;
     float: right;
-    width: 440px;
-    height: 351px;
-} 
+    width: 416px;
+    height: 364px;
+}
 
+
+/* задний фон для модального окона регистрации  */
 .background-modal {
     height: 100%;
     width: 100%;
-   
-    background-color:#000000c4;
+    background-color: #000000c4;
     position: absolute;
-     display: none;
+    display: none;
 }
 
-/* Форма регистрации кнопка и инпуты */
+/* Форма регистрации окно */
 .form-registration {
-    max-width: 320px;
-    padding: 15px;
-    margin: 90px auto ;
-    background-color: #fff;
+    width: 900px;
+    height: 500px;
+    margin: 150px auto;
+    box-shadow: 2px 2px 10px #b4b4b4;
+    border-radius: 50px;
 }
-/* кнопка закрытия */
-.clouse-button{
-    background-color: transparent;
-    color: rgb(223, 218, 218);
-    position: absolute;
-    top: 81px;
-    right: 373px;
-    font-size: 20px;
-    cursor: pointer;
-}
+
+
+
 
 .input {
     display: block;
-    width: 100%;
-    padding: 8px 10px;
-    margin-bottom: 10px;
-
-    border: 1px solid #ccc;
-
-    font-family: inherit;
-    font-size: 16px;
+    height: 30px;
+    width: 40%;
+    background-color: rgba(25, 25, 25, 0.784);
+    border-radius: 40px;
+    padding: 24px 20px;
+    margin: 0px 0px 33px 25px;
+    font-size: 15px;
+    color: wheat;
 }
-
+/* кнопка в панели регистрации */
 .btn {
-    display: block;
-    width: 100%;
-    padding: 8px 10px;
-
-    border: 0;
-    background-color: #1cbc11;
+    position: sticky;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #afafaf;
+    color: black;
+    font-size: 14px;
+    padding: 16px 30px;
+    border: none;
     cursor: pointer;
-
-    font-family: inherit;
-    font-size: 16px;
-    color: #fff;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .btn:hover {
-    background-color: #14a20a;
+    background-color: black;
+    color: white;
 }
 
+/* свойства модального окна по умолчанию */
+.modal {
+    position: fixed;
+    /* фиксированное положение */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* цвет фона */
+    z-index: 1050;
+    /* по умолчанию модальное окно прозрачно */
+    transition: opacity 200ms ease-in;
+    /* анимация перехода */
+    pointer-events: none;
+    /* элемент невидим для событий мыши */
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+
+/* ширина модального окна и его отступы от экрана */
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+@media (min-width: 576px) {
+
+    .modal-dialog {
+        max-width: 500px;
+        margin: 30px auto;
+        /* для отображения модального окна по центру */
+    }
+}
+
+/* свойства для блока, содержащего контент модального окна */
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+@media (min-width: 768px) {
+    .modal-content {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    }
+}
+
+/* свойства для заголовка модального окна */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #eceeef;
+    background-color: #000000a8;
+}
+
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* свойства для кнопки "Закрыть" */
+.close-button {
+    float: right;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    text-decoration: none;
+}
+
+/* свойства для кнопки "Закрыть" при нахождении её в фокусе или наведении */
+.close-button:focus,
+.close-button:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .75;
+}
+
+/* свойства для блока, содержащего основное содержимое окна */
+.modal-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 15px;
+    overflow: auto;
+    background-color: #000000a8;
+}
